@@ -84,7 +84,8 @@ TEXINPUTS=./lib//: pdflatex project.tex
 Load the `dndbook` class in your preamble:
 
 ```tex
-\documentclass[10pt,twoside,twocolumn,openany,nodeprecatedcode]{dndbook}
+\documentclass[10pt,letterpaper,twocolumn,openany,nodeprecatedcode]{dndbook}
+
 
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
