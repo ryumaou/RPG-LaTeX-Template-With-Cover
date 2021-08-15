@@ -3,20 +3,26 @@
 [![Latest release](https://img.shields.io/github/release/rpgtex/DND-5e-LaTeX-Template/all.svg)](https://github.com/rpgtex/DND-5e-LaTeX-Template/releases/latest)
 [![Build Status](https://img.shields.io/circleci/project/github/rpgtex/DND-5e-LaTeX-Template/master.svg?style=flat)](https://circleci.com/gh/rpgtex/DND-5e-LaTeX-Template)
 
-This is a LaTeX template for typesetting documents in the style of the fifth edition of the "world's greatest roleplaying game".
-
+A LaTeX package to typeset material for role-playing games in the style of the fifth edition of the "world's greatest roleplaying game", with a front cover, a title page, a copyright page and a back cover.
 ## Features
 
 * Color schemes, fonts, and layout are close to the core books (but not exactly the same).
 * TeX Live includes the default fonts.
 * Works with pdfTeX, LuaTeX, and XeTeX.
+* Works with Overleaf
+* Optional front and back covers
+* Includes an optional title page
+* Includes an optional copyright page
+* Fancy part separation pages
+* More compressed graphics for smaller files
 
 ![Preview](scrot.jpg)
 
 ## Installation
 
 There are three options for using this project; choose the one that's
-right for you.
+right for you.  
+We recommend using Overleaf, though, as this is what was used to develop it.
 
 ### User install using `TEXMFHOME` (recommended)
 
