@@ -11,18 +11,97 @@
   \setlength{\dbltextfloatsep}{11pt plus 4pt minus 4pt}
 
   % Remove Numbering (If you want Numbering set secnumdepth to the appropriate depth)
-  \setcounter{secnumdepth}{0}
+ \setcounter{secnumdepth}{0}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % Section formatting
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % cover
+\newkeycommand\rpgMakeCover[
+    image=,
+    logo=,
+    title=Title,
+    subtitle=subtitle,
+    ]{
+    \onecolumn
+    \thispagestyle{empty}
+    %\ \fancyhf {}
+    \fancypagestyle {plain}
+    \AddThispageHook{
+        \tikz[remember~picture,overlay] \node[inner~sep=0pt] at (current~page.center){\includegraphics[width=\paperwidth,height=\paperheight]{\commandkey{image}}};
+    }
+    \begin{center}
+        \vspace*{20mm}\includegraphics[width=3cm]{\commandkey{logo}}\\*\vspace*{15mm}
+        %\ \nodesto
+         \MakeUppercase{\commandkey{title}}\\*
+        \normalfont\normalsize\includegraphics[width=.5\paperwidth]{img/separator}\\*
+                \LARGE
+        %\ \vfill
+        \vspace*{85mm}
+        \fontsize{16pt}{16pt}
+        \color{black}
+        \textbf{\commandkey{subtitle}}
+    \end{center}
+    \clearpage
+    \twocolumn
+}
+
+%back cover
+\newkeycommand\rpgMakeBackCover[
+    image=,
+    logo=,
+    title=Title,
+    subtitle=subtitle,
+    blurbtext=lurbtext,
+    ]{
+    \onecolumn
+    \thispagestyle{empty}
+    %\ \fancyhf {}
+    \fancypagestyle {plain}
+    \AddThispageHook{
+        \tikz[remember~picture,overlay] \node[inner~sep=0pt] at (current~page.center){\includegraphics[width=\paperwidth,height=\paperheight]{\commandkey{image}}};
+    }
+    \begin{center}
+        \vspace*{20mm}\includegraphics[width=3cm]{\commandkey{logo}}\\*\vspace*{15mm}
+        %\ \nodesto
+         \MakeUppercase{\commandkey{title}}\\*
+        \normalfont\normalsize\includegraphics[width=.5\paperwidth]{img/separator}\\*
+                \LARGE
+        %\ \vfill
+        \vspace*{15mm}
+        \fontsize{16pt}{16pt}
+        \color{black}
+        \textbf{\commandkey{subtitle}}
+        \vspace*{15mm}
+        \fontsize{16pt}{16pt}
+        \color{black}
+        \begingroup
+        \leftskip 4em
+        \rightskip 4em
+        \textbf{\commandkey{blurbtext}}
+        \endgroup
+    \end{center}
+    \clearpage
+    \twocolumn
+}
   % Part
-  \titleformat {\part}
-    [display]
-    { \centering \DndFontPart } % format
-    { \DndContour{\partname\ \thepart} } % label
-    { 2ex } % sep
-    { \DndContour } % before-code
+  %%%%%%%%%%%%%% \part
+
+\titleformat{\part}
+[display]
+{\thispagestyle{part}\fontsize{50pt}{50pt}\selectfont\color{sectiontitlecolor}\filcenter} %\ \nodesto
+{\partname \thepart} 
+{-15pt}
+{\Large}
+
+\titlespacing*{\part}{0pt}{-54pt}{0pt}
+
+%\ \titleformat {\part}
+%\    [display]
+%\    { \centering \DndFontPart } % format
+%\    { \DndContour{\partname\ \thepart} } % label
+%\    { 2ex } % sep
+%\    { \DndContour } % before-code
 
   % Chapter
   \titleformat {\chapter}
