@@ -1,4 +1,5 @@
-\documentclass[letterpaper,twocolumn,openany,nodeprecatedcode]{dndbook}
+\documentclass[10pt,letterpaper,twocolumn,openany,nodeprecatedcode]{dndbook}
+
 
 % Use babel or polyglossia to automatically redefine macros for terms
 % Armor Class, Level, etc...
@@ -31,26 +32,93 @@
   breaklines=true,
 }
 
-\title{The Dark \LaTeX{} \\
-\large An Example of the dndbook Class}
-\author{The rpgTeX Team}
-\date{2020/04/21}
-
 \begin{document}
+%\ By adding the DndFontTile and DndTitleContour to this section we can avoid the issue with variable expansion not letting the title wrap.  It's a little annoying but it gets the job done.
+\rpgMakeCover[
+    image = img/MedievalCover,
+    logo = img/logo,
+    title = \DndFontTitle\DndTitleContour{RPG Game Book Template },
+    subtitle = An Example of the dndbook Class\\ forked by JKHoffman \today\\with Overleaf\\
+]
 
-\frontmatter
+%\ \frontmatter
+%\ \cleardoublepage
+\onecolumn
+\thispagestyle{empty}
+%\Here's where the title page starts
+\begin{center}
+    \vspace*{15mm}
+	{\fontsize{30}{25}\selectfont
+	\scshape
+     Game Book Template\\ \par}
+	
+	\vspace{20pt}
+	An Example of the dndbook Class\\ forked by JKHoffman \today\\with Overleaf\\\url{https://github.com/Krozark/RPG-LaTeX-Template}\\
+    %\ \pgfornament[width=17pt]{8}
+    
+    \vspace{20pt}
+    by\\
+       \vspace{5pt}
+	{\huge
+	J K Hoffman}
 
-\maketitle
+    \vspace{20pt}
+    
+%\    {\small
+%\	\textit{med efterord av\\}}
+%\	{\normalsize
+%\	\textsc{Stephen King}}
+
+    \vspace{\fill}
+
+	%\ \pgfornament[height=20pt]{122}
+	
+	\vspace{10pt}
+	
+%\    {\renewcommand*{\rmdefault}{pzc}
+%\    \fontfamily{\rmdefault}\selectfont
+%\ SkrÃ¤ckbiblioteket}	
+
+\end{center}
+%This is where the copyright page and publishing history starts
+\clearpage
+\thispagestyle{empty}
+
+\vspace*{\fill}
+
+\begin{center}
+{\footnotesize\itshape
+
+Copyright Â© 2021 by Author Authorson\\[2ex]
+
+All rights reserved. This book or any portion thereof
+may not be reproduced or used in any manner whatsoever
+without the express written permission of the publisher
+except for the use of brief quotations in a book review.
+Printed in the World.\\[2ex]
+
+First Printing, 2021\\[2ex]
+
+ISBN 0-9000000-0-0\\[2ex]
+
+Obsidian Labyrinth\\
+1234 Erehwon Street\\
+Houston, TX 00000\\[2ex]
+
+\url{www.ObsidianLabyrinth.com}\\
+}
+\end{center}
+
+\vspace*{\fill}
 
 \tableofcontents
 
 \mainmatter%
 
 \part{Layout}
-
+\twocolumn
 \chapter{Sections}
-
-\DndDropCapLine{T}{his package is designed to aid you in} writing beautifully typeset documents for the fifth edition of the world's greatest roleplaying game. It starts by adjusting the section formatting from the defaults in \LaTeX{} to something a bit more familiar to the reader. The chapter formatting is displayed above.
+\DndDropCapLine{T}{his package is designed to aid you in} writing beautifully typeset documents for the fifth edition of the world's most popular roleplaying game. It starts by adjusting the section formatting from the defaults in \LaTeX{} to something a bit more familiar to the reader. The chapter formatting is displayed above.
 
 \section{Section}
 Sections break up chapters into large groups of associated text.
@@ -117,7 +185,7 @@ A five-foot hole reveals the dirt floor illuminated by a hole in the roof.
 
 \chapter{Text Boxes}
 
-The module has three environments for setting text apart so that it is drawn to the reader's attention. |DndReadAloud| is used for text that a game master would read aloud.
+\DndDropCapLine{T}{he module has three environments} for setting text apart so that it is drawn to the reader's attention. |DndReadAloud| is used for text that a game master would read aloud.  You need to be careful using a dropcap so close to a text box though, or the text box will cut off the dropcap.\\
 
 \begin{DndReadAloud}
   As you approach this module you get a sense that the blood and tears of many generations went into its making. A warm feeling welcomes you as you type your first words.
@@ -357,5 +425,13 @@ Use |\DndSetThemeColor[<color>]| to set |commentcolor|, |readaloudcolor|, |sideb
   The sidebar is also using the new theme color.
 \end{DndSidebar}
 \endgroup
+\rpgMakeBackCover[
+    image = img/MedievalBack,
+    logo = img/logo,
+    title = \DndFontTitle\DndTitleContour{RPG Game Book Template },
+    subtitle = An Example of the dndbook Class\\ forked by JKHoffman \today\\with Overleaf\\,
+    blurbtext = {Well, if I'm going to do this, I might as well play it like the big boys and do it up like a real game supplement with blurb text on the back of the book!\\
+    Very exciting!}
+]
 
 \end{document}
