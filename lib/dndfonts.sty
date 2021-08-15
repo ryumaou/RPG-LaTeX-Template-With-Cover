@@ -28,6 +28,13 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Sectioning commands
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     % Part
+    title-family .tl_set:N         = \l__dnd_title_family_tl,
+    title-family .initial:n        = \normalfont,
+    title-family .value_required:n = true,
+    title-style .tl_set:N         = \l__dnd_title_style_tl,
+    title-style .initial:n        = \color{white}         \fontsize{36pt}{36pt} \scshape,
+    title-style .value_required:n = true,
     % Part
     part-family .tl_set:N         = \l__dnd_part_family_tl,
     part-family .initial:n        = \normalfont,
@@ -224,6 +231,9 @@
 % Font access functions combine the selected family and style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Sectioning commands
+\NewDocumentCommand{\DndFontTitle}{}
+  { \l__dnd_title_family_tl \l__dnd_title_style_tl}
+  
 \NewDocumentCommand{\DndFontPart}{}
   { \l__dnd_part_family_tl \l__dnd_part_style_tl}
 
@@ -337,12 +347,30 @@
     \seq_use:Nn \l_tmpb_seq { ~ }
     \group_end:
   }
+  
+  \cs_new_protected:Npn \__dnd_title_contour_preserve_space:nn #1#2
+  {
+    \group_begin:
+    \seq_set_split:Nnn \l_tmpa_seq { ~ } { #2 }
+    \seq_set_map:NNn \l_tmpb_seq \l_tmpa_seq { \exp_not:n {\contour{#1}{##1}} }
+    \seq_use:Nn \l_tmpb_seq { ~ }
+    \group_end:
+  }
 
 \NewDocumentCommand{\DndContour}{ O{contourgray} m }
   {
     \group_begin:
     \seq_set_split:Nnn \l_tmpa_seq { \newline } { #2 }
     \seq_set_map:NNn \l_tmpb_seq \l_tmpa_seq { \exp_not:n {\__dnd_contour_preserve_space:nn{#1}{##1}} }
+    \seq_use:Nn \l_tmpb_seq { \newline }
+    \group_end:
+  }
+  
+\NewDocumentCommand{\DndTitleContour}{ O{contourblack} m }
+  {
+    \group_begin:
+    \seq_set_split:Nnn \l_tmpa_seq { \newline } { #2 }
+    \seq_set_map:NNn \l_tmpb_seq \l_tmpa_seq { \exp_not:n {\__dnd_title_contour_preserve_space:nn{#1}{##1}} }
     \seq_use:Nn \l_tmpb_seq { \newline }
     \group_end:
   }
