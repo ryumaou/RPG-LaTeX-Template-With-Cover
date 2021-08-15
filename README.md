@@ -1,6 +1,6 @@
 # DnD 5e LaTeX Template
 
-[![Latest release](https://img.shields.io/github/release/rpgtex/DND-5e-LaTeX-Template/all.svg)](https://github.com/ryumaou/RPG-LaTeX-Template-With-Cover/releases/latest)
+[![Latest release](https://img.shields.io/github/release/ryumaou/RPG-LaTeX-Template-With-Cover/all.svg)](https://github.com/ryumaou/RPG-LaTeX-Template-With-Cover/releases/latest)
 [![Build Status](https://img.shields.io/circleci/project/github/rpgtex/DND-5e-LaTeX-Template/master.svg?style=flat)](https://circleci.com/gh/rpgtex/DND-5e-LaTeX-Template)
 
 A LaTeX package to typeset material for role-playing games in the style of the fifth edition of the "world's greatest roleplaying game", with a front cover, a title page, a copyright page and a back cover.
