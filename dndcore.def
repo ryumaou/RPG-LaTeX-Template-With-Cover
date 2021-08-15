@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Package Dependencies
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\RequirePackage[table]{xcolor}
 % Helps prevent option clash with other packages that include xcolor
 \PassOptionsToPackage {table} {xcolor}
 
@@ -16,9 +16,23 @@
 \RequirePackage [autolanguage] {numprint} % localization of thousands separator
 \RequirePackage {tabularx} % variable-width table columns
 \RequirePackage [breakable,skins,xparse]{tcolorbox} % styled text boxes
-\RequirePackage {tikz} % drawing ornaments and lines
-\RequirePackage {xcolor}
+
+% Loaded before tikz to avoid package option conflict with pgf.
+
+\RequirePackage[cm]{fullpage}     % Small margins
+\RequirePackage{calc}
+\RequirePackage{ifluatex}
+\RequirePackage{keycommand}
+\RequirePackage[titles]{tocloft}
+\RequirePackage[newparttoc]{titlesec}	% Used to adjust (sub)section formatting
+\RequirePackage{amssymb}
+\RequirePackage{everypage}
 \RequirePackage {xparse} % \NewDocumentCommand and expl3
+\RequirePackage{xkeyval}
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage{multicol}
+\RequirePackage {tikz} % drawing ornaments and lines
+
 
 \sys_if_engine_luatex:T
   {
