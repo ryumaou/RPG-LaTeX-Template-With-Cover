@@ -274,6 +274,7 @@ Install the appropriate plugin for your editor.
 ## Credits
 
 * Background image from [Lost and Taken](https://lostandtaken.com/)
+* Cover images taken from [Figudesign](https://www.facebook.com/FiguD ) via their store on RPGNow:[Figudesign on RPGNow](http://www.rpgnow.com/browse.php?manufacturers_id=3154)
 
 ## License
 
