@@ -17,7 +17,7 @@ A LaTeX package to typeset material for role-playing games in the style of the f
 * More compressed graphics for smaller files
 
 ![Preview](scrot.jpg)
-![Preview](RPG_LaTex_Template_With_Cover.pdf)
+![Preview](RPGTemplateCover.jpg)
 
 ## Installation
 
