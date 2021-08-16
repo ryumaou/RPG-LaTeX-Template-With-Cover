@@ -33,12 +33,12 @@
 }
 
 \begin{document}
-%\ By adding the DndFontTile and DndTitleContour to this section we can avoid the issue with variable expansion not letting the title wrap.  It's a little annoying but it gets the job done.
+%\ By adding the DndFontTile and DndTitleContour (and DndFontSubtitle and DndSubtitleContour) to this section we can avoid the issue with variable expansion not letting the title wrap.  It's a little annoying but it gets the job done.
 \rpgMakeCover[
-    image = img/MedievalCover,
+    image = img/FrontCover,
     logo = img/logo,
     title = \DndFontTitle\DndTitleContour{RPG Game Book Template },
-    subtitle = An Example of the dndbook Class\\ forked by JKHoffman \today\\with Overleaf\\
+    subtitle = \DndFontSubtitle\DndSubtitleContour{An Example of the dndbook Class\newline forked by JKHoffman \today\newline with Overleaf }
 ]
 
 %\ \frontmatter
@@ -50,7 +50,7 @@
     \vspace*{15mm}
 	{\fontsize{30}{25}\selectfont
 	\scshape
-     Game Book Template\\ \par}
+     RPG Game Book Template\\ \par}
 	
 	\vspace{20pt}
 	An Example of the dndbook Class\\ forked by JKHoffman \today\\with Overleaf\\\url{https://github.com/Krozark/RPG-LaTeX-Template}\\
@@ -77,7 +77,7 @@
 	
 %\    {\renewcommand*{\rmdefault}{pzc}
 %\    \fontfamily{\rmdefault}\selectfont
-%\ SkrÃ¤ckbiblioteket}	
+%\ Skräckbiblioteket}	
 
 \end{center}
 %This is where the copyright page and publishing history starts
@@ -89,7 +89,7 @@
 \begin{center}
 {\footnotesize\itshape
 
-Copyright Â© 2021 by Author Authorson\\[2ex]
+Copyright © 2021 by Author Authorson\\[2ex]
 
 All rights reserved. This book or any portion thereof
 may not be reproduced or used in any manner whatsoever
@@ -327,7 +327,7 @@ The |DndTable| colors the even rows and is set to the width of a line by default
   \end{multicols}
 \end{DndMonster}
 
-The |DndMonster| environment is used to typeset monster and NPC stat blocks. The module supplies many functions to easily typeset the contents of the stat block
+\DndDropCapLine{T}{he |DndMonster| environment is used to} typeset monster and NPC stat blocks. The module supplies many functions to easily typeset the contents of the stat block
 
 \part{Customization}
 
@@ -359,7 +359,7 @@ The |DndMonster| environment is used to typeset monster and NPC stat blocks. The
   \end{tabularx}
 \end{table*}
 
-This package provides several global color variables to style |DndComment|, |DndReadAloud|, |DndSidebar|, and |DndTable| environments.
+\DndDropCapLine{T}{his package provides several global color} variables to style |DndComment|, |DndReadAloud|, |DndSidebar|, and |DndTable| environments.
 
 \begin{DndTable}[header=Box Colors]{lX}
   Color            &  Description \\
@@ -425,13 +425,20 @@ Use |\DndSetThemeColor[<color>]| to set |commentcolor|, |readaloudcolor|, |sideb
   The sidebar is also using the new theme color.
 \end{DndSidebar}
 \endgroup
+\twocolumn
+\chapter{Post Fork Updates}
+\DndDropCapLine{T}{his is a brief description of the} changes that have been added since the fork.  
+Cover graphics have been changed as well as making the additon of a back cover.  Actually, come to think of it, the front cover is an addition to this from another project, though adapted to use the fonts and contours in this version.
+Also the Section "parts" have been fancied up with a graphic I added and headers taken from the same fork that added the front cover.  The graphic for that, though, was made from a stock photo that I altered via a plugin to look like a painting.
 \rpgMakeBackCover[
-    image = img/MedievalBack,
+    image = img/BackCover,
     logo = img/logo,
     title = \DndFontTitle\DndTitleContour{RPG Game Book Template },
-    subtitle = An Example of the dndbook Class\\ forked by JKHoffman \today\\with Overleaf\\,
+    subtitle = \DndFontSubtitle\DndSubtitleContour{An Example of the dndbook Class\newline forked by JKHoffman \today\newline with Overleaf\newline },
     blurbtext = {Well, if I'm going to do this, I might as well play it like the big boys and do it up like a real game supplement with blurb text on the back of the book!\\
     Very exciting!}
 ]
 
 \end{document}
+
+
