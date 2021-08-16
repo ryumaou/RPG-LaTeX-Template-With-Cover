@@ -16,8 +16,9 @@ A LaTeX package to typeset material for role-playing games in the style of the f
 * Fancy part separation pages
 * More compressed graphics for smaller files
 
-![Preview](scrot.jpg)
 ![Preview](RPGTemplateCover.jpg)
+
+![Preview](scrot.jpg)
 
 ## Installation
 
